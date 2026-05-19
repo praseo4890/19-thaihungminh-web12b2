@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@keyframes marquee-new {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: black;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content; 
+  animation: marquee-new 20s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; 
+}
+
+.marquee-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0 40px; 
+}
+.writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-item {
+  @apply transition-all duration-500;
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

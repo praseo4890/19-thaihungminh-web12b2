@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+.sidebar {
+  @apply fixed left-0 top-1/2 -translate-y-1/2 z-[90] bg-white border-r border-gray-100 border-l-2 border-l-black flex flex-col w-[80px];
+}
+
+.writingVertical {
+  @apply py-8 px-4 text-[10px] font-mono tracking-widest uppercase border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.marqueeWrapper {
+  @apply bg-black text-white py-4 overflow-hidden border-y border-white/20 flex w-full;
+}
+
+.marqueeContent {
+  @apply flex items-center whitespace-nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.marqueeItem {
+  @apply px-10 flex items-center uppercase font-mono text-[11px] tracking-[0.2em];
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
